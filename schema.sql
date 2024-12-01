@@ -20,6 +20,7 @@ model VARCHAR(10),
 vehicle_type VARCHAR(10),
 color VARCHAR(10),
 odometer INT,
+price DECIMAL(10,2) NOT NULL,
 dealership_id INT,
 FOREIGN KEY (dealership_id) REFERENCES dealerships(dealership_id),
 sold BOOLEAN 
@@ -57,12 +58,12 @@ VALUES
 ('Elite Autos', '456 Elm St, Dallas, TX', '9725554567'),
 ('Luxury Wheels', '789 Oak St, Dallas, TX', '8175557890');
 
-INSERT INTO vehicles (vin, type, year, make, model, vehicle_type, color, odometer, dealership_id, sold) VALUES
-(1001, 'Car', 2020, 'Toyota', 'Camry', 'Sedan', 'Blue', 30000, 1, FALSE),
-(1002, 'SUV', 2022, 'Honda', 'CR-V', 'SUV', 'Black', 15000, 1, FALSE),
-(1003, 'Truck', 2021, 'Ford', 'F-150', 'Truck', 'White', 20000, 2, TRUE),
-(1004, 'Car', 2023, 'Tesla', 'Model 3', 'Electric', 'Red', 5000, 3, FALSE),
-(1005, 'SUV', 2021, 'BMW', 'X5', 'Luxury', 'Gray', 25000, 2, TRUE);
+INSERT INTO vehicles (vin, type, year, make, model, vehicle_type, color, odometer,price, dealership_id, sold) VALUES
+(1001, 'Car', 2020, 'Toyota', 'Camry', 'Sedan', 'Blue', 30000,250000, 1, FALSE),
+(1002, 'SUV', 2022, 'Honda', 'CR-V', 'SUV', 'Black', 15000, 36000 ,1, FALSE),
+(1003, 'Truck', 2021, 'Ford', 'F-150', 'Truck', 'White', 20000, 51000 ,2, TRUE),
+(1004, 'Car', 2023, 'Tesla', 'Model 3', 'Electric', 'Red', 5000, 28000 ,3, FALSE),
+(1005, 'SUV', 2021, 'BMW', 'X5', 'Luxury', 'Gray', 25000,29000 , 2, TRUE);
 
 INSERT INTO inventory (dealership_id, vin) VALUES
 (1, 1001),
